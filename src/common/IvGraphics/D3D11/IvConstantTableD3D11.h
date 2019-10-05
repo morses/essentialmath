@@ -18,6 +18,7 @@
 //-------------------------------------------------------------------------------
 #include <d3d11.h>
 #include <map>
+#include <string>
 
 #include "IvUniform.h"
 
