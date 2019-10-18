@@ -18,10 +18,17 @@
 #include <stdlib.h>
 
 #if !defined(__APPLE__) || !defined(__MACH__)
-#include <GL/glew.h>
-#define GLEW_STATIC		// because we're linking statically to glew32s.lib
+    #include <GL/glew.h>
+    #define GLEW_STATIC		// because we're linking statically to glew32s.lib
+    #include <GLFW/glfw3.h>
+#else
+    // Xcode produces lots of documentation warnings for the glfw header file, this temporarily
+    // disables the warnings (there were 121 of them)
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wdocumentation"
+    #include <GLFW/glfw3.h>
+    #pragma clang diagnostic pop
 #endif
-#include <GLFW/glfw3.h>
 
 #include <IvGame.h>
 #include <IvDebugger.h>
