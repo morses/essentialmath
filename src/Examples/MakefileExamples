@@ -4,8 +4,8 @@ ifeq ($(PLATFORM),Linux)
 	CFLAGS_EXT = -ffriend-injection -std=c++11
 	TARGET_RELEASE = Example.elf
 	TARGET_DEBUG = ExampleD.elf
-	SYSLIBS = -lGLEW -lglfw3 -lGLU -lGL -lX11 -lXxf86vm -lXrandr -lpthread -lXinerama -lXi -lXcursor	
-	SYSLPATH = -L../../../../glfw-3.1.1/src
+	SYSLIBS = -lGLEW -lglfw -lGLU -lGL -lX11 -lXxf86vm -lXrandr -lpthread -lXinerama -lXi -lXcursor	
+#	SYSLPATH = -L../../../../glfw-3.1.1/src
 endif
 
 LIBRARIES = $(SYSLIBS) $(EXTRAIVLIBS)  -lIvEngineOGL -lIvEngine -lIvGraphicsOGL -lIvGraphics -lIvMath -lIvUtility $(SYSLIBS)
